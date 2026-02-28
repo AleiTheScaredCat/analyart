@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnalyArt | Curated Style Identification</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+</head>
+<body>
+    <div id="loader-overlay">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Initializing AI Gallery...</p>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <header>
+            <img src="logo.png" alt="AnalyArt Logo" class="main-logo">
+            <p class="tagline">Curated Style Identification</p>
+        </header>
+
+        <main>
+            <section class="card frame-gold">
+                <h2>Exhibit Analysis</h2>
+                <p class="instruction">Upload a masterpiece to identify its movement.</p>
+                
+                <div class="drop-zone" id="dropZone">
+                    <span class="drop-zone__prompt">Drop Image or Click to Browse</span>
+                    <input type="file" id="fileInput" class="drop-zone__input" accept="image/*">
+                    <img src="" id="imgPreview" class="preview-img">
+                </div>
+
+                <div class="controls">
+                    <button id="analyzeBtn" class="btn-gold" disabled>Identify Style</button>
+                    <button id="resetBtn" class="btn-outline">Reset Gallery</button>
+                </div>
+            </section>
+
+            <section id="resultsSection" class="card frame-gold hidden">
+                <h2>Analysis Results</h2>
+                <div id="statusMessage" class="status-box"></div>
+                
+                <div id="rankingsContainer">
+                    <h3 class="gold-text">Style Probability</h3>
+                    <div id="rankList"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="system-info">
+                <p>Supported Styles: Realism • Impressionism • Imperialism • Cubism • Pop-Art • Minimalism</p>
+            </div>
+            <p class="copyright">&copy; 2026 AnalyArt Systems</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
